@@ -1,0 +1,362 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    min-height: 100dvh;
+    background-image: url(./ASSETS/IMAGES/WIM-\ BACKGROUND.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.navbar 
+{
+    background-color: white;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    gap: 12px;
+}
+
+.logo img {
+    width: 58px;
+    height: auto;
+    max-height: 58px;
+}
+
+.logo span 
+{
+    color: #0080b8;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.navbar .nav-links,
+.navbar .nav-links-mobile {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+}
+.nav-links li,
+.nav-links-mobile li {
+    height: 50px;
+}
+.nav-links li a,
+.nav-links-mobile li a {
+    display: flex;
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    align-items: center;
+    color: black;
+    /*
+    font-size: 1rem;
+    line-height: 50px;
+    */
+}
+nav a:hover
+{
+    color: #0080b8;
+    transition: 0.3s ease-in-out;
+    background-color: black;
+}
+
+/* Hamburger menu button */
+.hamburger 
+{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span 
+{
+    width: 28px;
+    height: 3px;
+    background-color: #0080b8;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
+.nav-links-mobile
+{
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.544);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: right 0.3s ease;
+}
+
+.nav-links-mobile.active
+{
+    right: 0;
+}
+
+.nav-links-mobile li
+{
+    
+    width: 100%;
+    
+}
+.nav-links-mobile a
+{
+    width: 100%;
+
+    
+}
+main 
+{
+    position: relative;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 16px;
+    background-color: #0080b8;
+    opacity: 0.9;
+   
+}
+
+
+/* ── CONTENT ── */
+  .hero-content 
+  {
+   
+    position: relative;
+    z-index: 2;
+    padding: 0 24px;
+    max-width: 980px;
+    animation: fadeUp 1s ease 0.3s both;
+    
+  }
+
+  @keyframes fadeUp 
+  {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+   /* Tag line */
+  .hero-tag 
+  {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    animation: fadeUp 1s ease 0.1s both;
+  }
+
+   /* Main headline */
+  .hero-title 
+  {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: clamp(40px, 6.5vw, 76px);
+    font-weight: 900;
+    line-height: 1.12;
+    color: var(--white);
+    margin-bottom: 24px;
+    animation: fadeUp 1s ease 0.2s both;
+  }
+
+   .hero-title .gold 
+   {
+    color: var(--gold);
+    display: block;
+   }
+
+   /* Sub text */
+  .hero-sub 
+  {
+    font-size: clamp(15px, 1.8vw, 18px);
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 580px;
+    margin: 0 auto 44px;
+    animation: fadeUp 1s ease 0.4s both;
+  }
+
+  /* Buttons */
+  .hero-btns 
+  {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 1s ease 0.55s both;
+  }
+  
+  .btn 
+  {
+    padding: 16px 40px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  /* Primary — gold fill */
+  .btn-primary {
+    background: var(--gold);
+    color: #1A1000;
+    border: 2px solid var(--gold);
+  }
+
+  .btn-primary:hover {
+    background: #e09a0a;
+    border-color: #e09a0a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(244, 168, 16, 0.35);
+  }
+
+  .btn-primary:active { transform: translateY(0); }
+
+
+  /* Ghost — white outline */
+  .btn-ghost {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.75);
+  }
+
+  .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--white);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost:active { transform: translateY(0); }
+
+  /* ── SCROLL ARROW ── */
+  .scroll-arrow {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    animation: fadeUp 1s ease 0.9s both;
+  }
+
+  .scroll-arrow svg {
+    width: 22px;
+    height: 22px;
+    stroke: rgba(255,255,255,0.6);
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(8px); }
+  }
+
+   /* ── SCROLL ARROW ── */
+  .scroll-arrow {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    animation: fadeUp 1s ease 0.9s both;
+  }
+
+  .scroll-arrow svg {
+    width: 22px;
+    height: 22px;
+    stroke: rgba(255,255,255,0.6);
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(8px); }
+  }
+
+
+
+
+
+@media (max-width: 768px) 
+{
+    .nav-links {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
+
+
+/* Show hamburger on mobile */
+@media (max-width: 900px) 
+{
+    .hamburger {
+        display: flex;
+    }
+    .navbar .nav-links {
+        display: none;
+    }
+}
+
+/* Desktop only */
+@media (min-width: 901px) 
+{
+    .hamburger {
+        display: none;
+    }
+    .navbar .nav-links-mobile {
+        display: none;
+    }
+}
+
