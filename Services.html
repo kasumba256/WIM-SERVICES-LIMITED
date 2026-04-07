@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIM  Civil & Building Engineers-Services</title>
+    <link rel="stylesheet" href="./Services.css">
+    <meta name="description" content="WIM Services Limited is a ugandan multi-displinary engineering company 
+    specializing in Road construction and water Engineering .">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Reuse the same header from Index.html for consistency -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./ASSETS/IMAGES/wim logo-2.png" alt="WIM Services Limited Logo">
+                <span>WIM SERVICES LIMITED</span>
+            </div>  
+
+            <!-- Hamburger menu button for mobile -->
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Mobile Navigation Links -->
+            <ul class="nav-links-mobile">
+                <li><a href="#home">Home</a></li>
+                <li><a href="./About Us.html">About Us</a></li>
+                <li><a href="./Services.css">Services</a></li>
+                <li><a href="#Milestones">Milestones</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+
+             <ul class="nav-links">
+                <li><a href="./Index.html">Home</a></li>
+                <li><a href="./About Us.html">About Us</a></li>
+                <li><a href="./Services.html">Services</a></li>
+                <li><a href="#Milestones">Milestones</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section id="services">
+        <!-- ── HEADER ── -->
+       <div class="section-header reveal-up">
+         <p class="section-tag">Our Services</p>
+         <h2 class="section-title">What We <span class="gold">Build</span></h2>
+       </div>
+
+       <!-- ══ 01 — ROAD CONSTRUCTION ══ -->
+      <div class="service-row">
+ 
+       <!-- Image LEFT -->
+       <div class="service-img-wrap reveal-left">
+        <img
+         src="./ASSETS/IMAGES/WIM-ROAD.jpg"
+         alt="Road construction — heavy machinery on a dirt road"
+         loading="lazy"
+         />
+         </div>
+ 
+         <!-- Text RIGHT -->
+          <div class="service-content reveal-right">
+         <h3 class="service-title">Road Construction</h3>
+           <p class="service-body">
+             Our flagship offering. We own 75% of our road construction equipment,
+             boosting responsiveness while tightly managing timelines and costs.
+             Experienced in both asphalt and gravel roads with 150+ kilometres of
+             community connectivity roads completed.
+           </p>
+          <div class="badge-row">
+            <span class="badge">150+ km roads built</span>
+            <span class="badge">6 km asphalt upgrades</span>
+            <span class="badge">75% equipment owned</span>
+          </div>
+          </div>
+ 
+        </div>
+
+        <!-- ══ 02 — BUILDING CONSTRUCTION ══ -->
+          <div class="service-row reverse">
+ 
+            <!-- Text LEFT (visually, because reverse) -->
+            <div class="service-content reveal-left">
+               <h3 class="service-title">Building Construction</h3>
+               <p class="service-body">
+                 Whether you're putting up your home, business premises or an
+                 institutional facility, our approach is the same: customised solutions
+                 that stand the test of time. We design, build, renovate and remodel
+                 structures to reflect our clients' needs.
+               </p>
+                <div class="badge-row">
+                 <span class="badge">20,000+ m³ concrete cast</span>
+                 <span class="badge">Commercial &amp; residential</span>
+                 <span class="badge">Renovation &amp; remodeling</span>
+                </div>
+            </div>
+ 
+                 <!-- Image RIGHT (visually) -->
+              <div class="service-img-wrap reveal-right">
+                  <img
+                   src="./ASSETS/IMAGES/VIM-BUILDING.jpg"
+                   alt="Building construction — scaffolding on a high-rise"
+                   loading="lazy"
+                   />
+                </div>
+ 
+             </div>
+
+                    <!-- ══ 03 — WATER SUPPLY ══ -->
+                  <div class="service-row">
+ 
+                     <!-- Image LEFT -->
+                    <div class="service-img-wrap reveal-left">
+                      <img
+                         src="./ASSETS/IMAGES/VIm-water.jpg"
+                         alt="Water supply — large water storage tank"
+                         loading="lazy"
+                       />
+                   </div>
+ 
+                             <!-- Text RIGHT -->
+                        <div class="service-content reveal-right">
+                           <h3 class="service-title">Water Supply</h3>
+                               <p class="service-body">
+                                  We design and deliver complete water supply projects  including piped
+                                  water systems, purification plants, sewage treatment facilities, and
+                                  valley dams and tanks ensuring clean and reliable water supply to
+                                  rural areas and industries alike.
+                              </p>
+                              <div class="badge-row">
+                                 <span class="badge">40+ km piped water</span>
+                                 <span class="badge">Purification systems</span>
+                                 <span class="badge">Valley dams &amp; tanks</span>
+                             </div>
+                             </div>
+ 
+                  </div>
+ 
+ 
+ 
+    </section>
+      <script>
+        // ── Intersection Observer for scroll reveal ──
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+           if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+ 
+  document.querySelectorAll(
+    '.reveal-left, .reveal-right, .reveal-up'
+  ).forEach(el => observer.observe(el));
+</script>
+ 
+</html>
