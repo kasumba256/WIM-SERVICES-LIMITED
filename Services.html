@@ -30,7 +30,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="./About Us.html">About Us</a></li>
                 <li><a href="./Services.css">Services</a></li>
-                <li><a href="#Milestones">Milestones</a></li>
+                <li><a href="./Milestone.html">Milestones</a></li>
                 <li><a href="#clients">Clients</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
@@ -39,7 +39,7 @@
                 <li><a href="./Index.html">Home</a></li>
                 <li><a href="./About Us.html">About Us</a></li>
                 <li><a href="./Services.html">Services</a></li>
-                <li><a href="#Milestones">Milestones</a></li>
+                <li><a href="./Milestone.html">Milestones</a></li>
                 <li><a href="#clients">Clients</a></li>
                 <li><a href="#contact">Contact Us</a></li>
 
@@ -148,6 +148,16 @@
  
     </section>
       <script>
+// Hamburger menu toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav = document.querySelector('.nav-links-mobile');
+    
+    hamburgerBtn.addEventListener('click', function() {
+      mobileNav.classList.toggle('active');
+    });
+
+
+
         // ── Intersection Observer for scroll reveal ──
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {

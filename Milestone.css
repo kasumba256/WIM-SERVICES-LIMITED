@@ -1,0 +1,513 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    min-height: 100dvh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0efea;
+    color: black
+}
+.navbar 
+{
+    background-color: white;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+.navbar .logo 
+{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    gap: 12px;
+}
+.logo img 
+{   
+    width: 58px;
+    height: auto;
+    max-height: 58px;
+}
+.logo span 
+{
+    color: #0080b8;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.navbar .nav-links,
+.navbar .nav-links-mobile 
+{
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+}
+.nav-links li,
+.nav-links-mobile li 
+{
+    height: 50px;
+}
+.nav-links li a,
+.nav-links-mobile li a 
+{
+    text-decoration: none;
+    display: flex;
+    height: 100%;
+    padding: 0 30px;
+    align-items: center;
+    color: black;
+} 
+.navbar a:hover 
+{
+    color: #0080b8;
+    transition: 0.3s ease-in-out;
+    background-color: black;
+}   
+/*Hamburger Menu button */
+
+.hamburger 
+{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+
+
+}
+.hamburger span
+{
+    width: 28px;
+    height: 3px;
+    background-color: #0080b8;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
+.nav-links-mobile
+{
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.544);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: right 0.3s ease;
+}
+.nav-links-mobile.active
+{
+    right: 0;
+}
+
+.nav-links-mobile li
+{
+    
+    width: 100%;
+    
+}
+.nav-links-mobile a
+{
+    width: 100%;
+ 
+}
+
+ #milestones 
+ {
+    padding: 100px 0 80px;
+    
+  }
+ 
+
+ /* Header */
+  .milestones-header 
+  {
+    text-align: center;
+    margin-bottom: 72px;
+    padding: 0 24px;
+  }
+  .section-tag 
+  {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #0080b8;
+    margin-bottom: 14px;
+  }
+  .section-title 
+  {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-weight: 900;
+    color: black;
+    line-height: 1.15;
+  }
+  .section-title .gold 
+  {
+    color: #0080b8;
+    font-style: italic;
+  }
+
+  /* Timeline wrapper */
+  .timeline-wrap 
+  {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* Central vertical line */
+  .timeline-wrap::before 
+  {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #cbd5e0;
+    transform: translateX(-50%);
+  }
+
+   /* Individual milestone item */
+  .milestone 
+  {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    align-items: start;
+    margin-bottom: 80px;
+    position: relative;
+  }
+
+  /* Dot on the line */
+  .milestone-dot 
+  {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+    z-index: 2;
+  }
+  .milestone-dot::after 
+  {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #64a8c6;
+    border: 3px solid #0294d2;
+    outline: 2px solid #0d0d0dba;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .milestone:hover .milestone-dot::after 
+  {
+    transform: scale(1.4);
+  }
+   /* LEFT side content (odd milestones) */
+  .milestone-left 
+  {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: right;
+    padding-right: 40px;
+    padding-top: 0;
+  }
+  /* RIGHT side content (even milestones) */
+  .milestone-right 
+  {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: left;
+    padding-left: 40px;
+    padding-top: 0;
+  }
+  /* Empty placeholder for alternating side */
+  .milestone-empty 
+  {
+    /* intentionally empty */
+  }
+  .milestone-year 
+  {
+    font-family: 'Merriweather', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: #0080b8;
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+
+  .milestone-title 
+  {
+    font-family: 'Merriweather', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .milestone-desc 
+  {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-body);
+    font-weight: 400;
+    max-width: 340px;
+  }
+  /* Right-aligned desc needs margin-left auto */
+  .milestone-left .milestone-desc 
+  {
+    margin-left: auto;
+  }
+
+  /* ════════════════════════════════════════
+     CLIENTS / ENDORSEMENTS SECTION
+  ════════════════════════════════════════ */
+  #clients 
+  {
+    background: white;
+    border-top: 1px solid #e2e8f0;
+    padding: 96px 80px 100px;
+  }
+ 
+  .clients-header 
+  {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+ .clients-intro 
+ {
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgb(28, 26, 26);
+    max-width: 620px;
+    margin: 0 auto;
+    font-weight: 400;
+  }
+  /* Client logo grid */
+  .clients-grid 
+  {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto 72px;
+  }
+  .client-card 
+  {
+    background: #ffffff;
+    border: 1px rgb(96, 113, 134);
+    border-radius: 10px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+    cursor: default;
+    min-height: 90px;
+  }
+  .client-card:hover 
+  {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+    border-color: #0080b8;
+  }
+  .client-icon 
+  {
+    font-size: 22px;
+    line-height: 1;
+  }
+  .client-name 
+  {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a2e;
+    letter-spacing: 0.2px;
+  }
+   /* Testimonial */
+  .testimonial-wrap 
+  {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #0f1e35;
+    border-radius: 16px;
+    padding: 56px 64px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .testimonial-avatar 
+  {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #162540;
+    border: 3px solid #0080b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Merriweather', serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .testimonial-body {}
+ 
+  .testimonial-quote-mark 
+  {
+    font-family: 'Merriweather', serif;
+    font-size: 64px;
+    line-height: 0.6;
+    color: white;
+    opacity: 0.4;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .testimonial-text 
+  {
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+  .testimonial-attr 
+  {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #0080b8;
+  }
+
+  
+  /* ════════════════════════════════════════
+     RESPONSIVE
+  ════════════════════════════════════════ */
+  @media (max-width: 860px) 
+  {
+    .timeline-wrap { padding: 0 24px; }
+ 
+    /* Single column timeline on mobile */
+    .timeline-wrap::before { left: 20px; transform: none; }
+ 
+    .milestone {
+      grid-template-columns: 40px 1fr;
+      grid-template-rows: auto;
+    }
+ 
+    .milestone-dot {
+      grid-column: 1;
+      grid-row: 1;
+      justify-content: flex-start;
+      padding-left: 7px;
+    }
+ 
+    .milestone-left,
+    .milestone-right {
+      grid-column: 2;
+      grid-row: 1;
+      text-align: left;
+      padding-left: 20px;
+      padding-right: 0;
+    }
+ 
+    .milestone-left .milestone-desc { margin-left: 0; }
+    .milestone-empty { display: none; }
+ 
+    #clients { padding: 72px 24px; }
+    .clients-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonial-wrap { grid-template-columns: 1fr; padding: 40px 28px; gap: 24px; }
+    .testimonial-avatar { width: 60px; height: 60px; font-size: 18px; }
+  }
+ 
+  @media (max-width: 480px) 
+  {
+    .clients-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) 
+{
+    .nav-links {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
+
+
+/* Show hamburger on mobile */
+@media (max-width: 900px) 
+{
+    .hamburger {
+        display: flex;
+    }
+    .navbar .nav-links {
+        display: none;
+    }
+}
+
+/* Desktop only */
+@media (min-width: 901px) 
+{
+    .hamburger {
+        display: none;
+    }
+    .navbar .nav-links-mobile {
+        display: none;
+    }
+}
