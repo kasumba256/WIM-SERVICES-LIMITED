@@ -68,9 +68,10 @@ body
 }
 .navbar a:hover 
 {
-    color: #0080b8;
+    color: black;
     transition: 0.3s ease-in-out;
-    background-color: black;
+    background-color: #1285b6;
+    border-radius: 35px 0 0 0;
     /*
      background-color: #f0f0f0; 
     
