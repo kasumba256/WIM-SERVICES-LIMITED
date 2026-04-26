@@ -311,7 +311,7 @@ body
   .form-input::placeholder,
   .form-textarea::placeholder 
   {
-    color: var(--text-muted);
+    color: #1186b7;
     font-size: 14px;
   }
  
@@ -371,6 +371,9 @@ body
    /* ════════════════════════════════════════
      FOOTER
   ════════════════════════════════════════ */
+
+
+
   footer 
   {
     background: #1a2f4a;
@@ -379,6 +382,11 @@ body
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     gap: 24px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+    
   }
  
   /* Brand */

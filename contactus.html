@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>contact us</title>
-    <link rel="stylesheet" href="./Contact us.css">
+    <link rel="stylesheet" href="./contactus.css">
     <meta name="description" content="WIM Services Limited is a ugandan multi-displinary engineering company 
     specializing in Road construction and water Engineering .">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -26,21 +26,21 @@
 
             <!-- Mobile Navigation Links -->
             <ul class="nav-links-mobile">
-                <li><a href="./Index.html">Home</a></li>
-                <li><a href="./About Us.html">About Us</a></li>
-                <li><a href="./Services.css">Services</a></li>
-                <li><a href="./Milestone.html">Milestones</a></li>
-                <li><a href="./Milestone.html#clients">Clients</a></li>
-                <li><a href="./Contact us.html">Contact Us</a></li>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./aboutus.html">About Us</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./milestone.html">Milestones</a></li>
+                <li><a href="./milestone.css#clinets">Clients</a></li>
+                <li><a href="./contactus.html">Contact Us</a></li>
             </ul>
 
              <ul class="nav-links">
-                <li><a href="./Index.html">Home</a></li>        
-                 <li><a href="./About Us.html">About Us</a></li>
-                 <li><a href="./Services.html">Services</a></li>
-                 <li><a href="./Milestone.html">Milestones</a></li>
-                 <li><a href="./Milestone.html#clients">Clients</a></li>
-                 <li><a href="./Contact us.html">Contact Us</a></li> 
+                <li><a href="./index.html">Home</a></li>        
+                 <li><a href="./aboutus.html">About Us</a></li>
+                 <li><a href="./services.html">Services</a></li>
+                 <li><a href="./milestone.html">Milestones</a></li>
+                 <li><a href="./milestone.html#clinets">Clients</a></li>
+                 <li><a href="./contactus.html">Contact Us</a></li> 
              </ul>  
         </nav>
     </header> 
@@ -116,7 +116,7 @@
             </svg>
           </div>
           <span class="info-text">
-            <a href="./Services.html" target="_blank" rel="noopener">www.wimservices.com</a>
+            <a href="./services.html" target="_blank" rel="noopener">www.wimservices.com</a>
           </span>
         </div>
  
@@ -192,6 +192,82 @@
   </div>
  
 </footer>
+
+<script>
+  // ── Scroll reveal ────────────────────────────────────
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+ 
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
+    .forEach(el => observer.observe(el));
+ 
+  // ── Form validation & submit ─────────────────────────
+  const form      = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+ 
+  // Shake animation for invalid fields
+  const shakeStyle = document.createElement('style');
+  shakeStyle.textContent = `
+    @keyframes shake {
+      0%,100%{ transform: translateX(0); }
+      20%    { transform: translateX(-6px); }
+      40%    { transform: translateX(6px); }
+      60%    { transform: translateX(-4px); }
+      80%    { transform: translateX(4px); }
+    }
+    .invalid {
+      border-color: #E53E3E !important;
+      box-shadow: 0 0 0 3px rgba(229,62,62,0.12) !important;
+      animation: shake 0.4s ease;
+    }
+  `;
+  document.head.appendChild(shakeStyle);
+ 
+  function validateField(el) {
+    const ok = el.value.trim() !== '' &&
+      (el.type !== 'email' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value));
+    el.classList.toggle('invalid', !ok);
+    return ok;
+  }
+ 
+  // Live validation on blur
+  ['name','email','subject','message'].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('blur', () => validateField(el));
+    el.addEventListener('input', () => {
+      if (el.classList.contains('invalid')) validateField(el);
+    });
+  });
+ 
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+ 
+    const fields = ['name','email','subject','message'].map(id => document.getElementById(id));
+    const allValid = fields.map(f => validateField(f)).every(Boolean);
+ 
+    if (!allValid) return;
+ 
+    // Simulate send
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+ 
+    setTimeout(() => {
+      submitBtn.textContent = 'Message Sent ✓';
+      submitBtn.classList.add('sent');
+      form.reset();
+ 
+      // Reset after 4s
+      setTimeout(() => {
+        submitBtn.textContent = 'Send Message';
+        submitBtn.classList.remove('sent');
+        submitBtn.disabled = false;
+      }, 4000);
+    }, 1400);
+  });
+</script>
  
     
 </body>
