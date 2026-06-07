@@ -4,8 +4,268 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WIM  Civil & Building Engineers Uganda</title>
+    <link rel="stylesheet" href="./gallery.css">
+    <meta name="description" content="WIM Services Limited is a ugandan multi-displinary engineering company 
+    specializing in Road construction and water Engineering .">
 </head>
 <body>
+    <header class="sticky-header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./ASSETS/IMAGES/wim logo-2.png" alt="WIM Services Limited Logo">
+                <span>WIM SERVICES LIMITED</span>
+                
+            </div>
+            
+            <!-- Hamburger menu button for mobile -->
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./aboutus.html">About Us</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./milestone.html">Milestones</a></li>
+                <li><a href="./milestone.html#clinets">Clients</a></li>
+                <li><a href="./gallery.html">Gallery</a></li>
+                <li><a href="./contactus.html">Contact Us</a></li>
+                
+
+            </ul>
+
+            <!-- Mobile Navigation Links -->
+            <ul class="nav-links-mobile">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./aboutus.html">About Us</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./milestone.html">Milestones</a></li>
+                <li><a href="./milestone.html#clients">Clients</a></li>
+                <li><a href="./gallery.html">Gallery</a></li>
+                <li><a href="./contactus.html">Contact Us</a></li>  
+                
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- Gallery Section -->
+    <div class="page" id="page-gallery">
+        <section class="gallery-page">
+            <div class="gallery-hdr rv">
+                <div class="sec-tag">Our Work</div>
+                <h2 class="sec-title">Project <span class="g">Gallery</span></h2>
+            </div>
+
+            <p class="gallery-sub rv">A visual record of roads built, buildings raised, and communities 
+                connected across Uganda and beyond.</p>
+
+            <!-- Filter--> 
+             <div class="gallery-filters rv">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="road">Roads</button>
+                <button class="filter-btn" data-filter="building">Buildings</button>
+                <button class="filter-btn" data-filter="water">Water Projects</button>
+                <button class="filter-btn" data-filter="site">On Site</button>
+             </div>
+             <!-- Gallery grid --> 
+              <div class="gallery-grid" id="galleryGrid">
+                 <div class="gallery-item tall rv d1" data-cat="road" data-title="Murram Road — Hoima" data-img="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1000&q=80">
+                   <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Road Construction Hoima" loading="lazy"/>
+
+                    <div class="gallery-overlay">
+                      <div class="gallery-caption">Murram Road — Hoima</div>
+                      <div class="gallery-cat">Road Construction</div>
+                    </div>
+                    <div class="gallery-expand">⤢</div>
+
+              </div>  
+
+              <div class="gallery-item rv d2" data-cat="road" data-title="Asphalt Paving — NARO Namulonge" data-img="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=1000&q=80">
+                      <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&q=80" alt="Asphalt Road NARO" loading="lazy"/>
+                      <div class="gallery-overlay"><div class="gallery-caption">Asphalt Paving — NARO</div><div class="gallery-cat">Road Construction</div></div>
+                      <div class="gallery-expand">⤢</div>
+              </div>
+
+               <div class="gallery-item rv d3" data-cat="building" data-title="Commercial Building — Kampala" data-img="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&q=80">
+                      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Commercial Building Kampala" loading="lazy"/>
+                      <div class="gallery-overlay"><div class="gallery-caption">Commercial Building — Kampala</div><div class="gallery-cat">Building Construction</div></div>
+                      <div class="gallery-expand">⤢</div>
+               </div>
+
+               <div class="gallery-item wide rv d4" data-cat="road" data-title="Nadduli-Kibaale Road Upgrade — KCCA 2024" data-img="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=1200&q=80">
+                      <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=1200&q=80" alt="Road Upgrade KCCA" loading="lazy"/>
+                      <div class="gallery-overlay"><div class="gallery-caption">Nadduli-Kibaale Road — KCCA 2024</div><div class="gallery-cat">Road Construction</div></div>
+                      <div class="gallery-expand">⤢</div>
+                 </div>
+
+                 <div class="gallery-item rv d1" data-cat="water" data-title="Water Purification Plant — Kawumu Tannery" data-img="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1000&q=80">
+                      <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=80" alt="Water Plant Kawumu" loading="lazy"/>
+                      <div class="gallery-overlay"><div class="gallery-caption">Water Plant — Kawumu Tannery</div><div class="gallery-cat">Water Supply</div></div>
+                      <div class="gallery-expand">⤢</div>
+                 </div>
+
+                 <div class="gallery-item rv d2" data-cat="site" data-title="Earthworks &amp; Slope Formation" data-img="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=1000&q=80">
+                      <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=800&q=80" alt="Earthworks Site" loading="lazy"/>
+                      <div class="gallery-overlay"><div class="gallery-caption">Earthworks &amp; Slope Formation</div><div class="gallery-cat">On Site</div></div>
+                      <div class="gallery-expand">⤢</div>
+                 </div>
+
+                 <div class="gallery-item tall rv d3" data-cat="building" data-title="Industrial Hub — Napak, Karamoja" data-img="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1000&q=80">
+                      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Industrial Hub Napak" loading="lazy"/>
+                      <div class="gallery-overlay"><div class="gallery-caption">Industrial Hub — Napak</div><div class="gallery-cat">Building Construction</div></div>
+                      <div class="gallery-expand">⤢</div>
+                 </div>
+
+                 <div class="gallery-item rv d4" data-cat="water" data-title="Valley Tank Construction — Nakasongola" data-img="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1000&q=80">
+                      <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80" alt="Valley Tank Nakasongola" loading="lazy"/>
+                      <div class="gallery-overlay"><div class="gallery-caption">Valley Tank — Nakasongola</div><div class="gallery-cat">Water Supply</div></div>
+                      <div class="gallery-expand">⤢</div>
+                 </div>
+ 
+                 <div class="gallery-item rv d5" data-cat="site" data-title="Site Crew — Road Works, Western Uganda" data-img="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&q=80">
+                      <img src="https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?w=800&q=80" alt="Site Crew Road Works" loading="lazy"/>
+                      <div class="gallery-overlay"><div class="gallery-caption">Site Crew — Western Uganda</div><div class="gallery-cat">On Site</div></div>
+                      <div class="gallery-expand">⤢</div>
+                 </div>
+ 
+                 <div class="gallery-item wide rv d6" data-cat="road" data-title="Culvert Installation — Flood Damage Reinstatement" data-img="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80" alt="Culvert Installation" loading="lazy"/>
+                    <div class="gallery-overlay"><div class="gallery-caption">Culvert Installation — Flood Reinstatement</div><div class="gallery-cat">Road Construction</div></div>
+                    <div class="gallery-expand">⤢</div>
+                </div>
+
+                <div class="gallery-item rv d1" data-cat="building" data-title="Kampala Kindergarten — School Block" data-img="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1000&q=80">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80" alt="Kampala Kindergarten" loading="lazy"/>
+                    <div class="gallery-overlay"><div class="gallery-caption">Kampala Kindergarten</div><div class="gallery-cat">Building Construction</div></div>
+                    <div class="gallery-expand">⤢</div>
+                </div>
+ 
+                  <!--
+                  <div class="gallery-item rv d2" data-cat="water" data-title="Piped Water System — Rural Uganda" data-img="https://images.unsplash.com/photo-1583521214690-73421a1829a9?w=1000&q=80">
+                    <img src="https://images.unsplash.com/photo-1583521214690-73421a1829a9?w=800&q=80" alt="Piped Water System" loading="lazy"/>
+                    <div class="gallery-overlay"><div class="gallery-caption">Piped Water System — Rural Uganda</div><div class="gallery-cat">Water Supply</div></div>
+                    <div class="gallery-expand">⤢</div>
+                  </div>
+                  -->
+ 
+ 
+ 
+ 
+ 
+        </section>
+    </div>
+
+    <!-- ══ FOOTER (shown on all pages) ════════════════ -->
+     <footer id="siteFooter" style="display:none;">
+       <div><div class="foot-brand-name">WIM <span class="g">Services</span> Limited</div><div class="foot-tag">Civil &amp; Building Engineers</div></div>
+       <div class="foot-center">P.O. Box 128026, Kampala, Uganda</div>
+       <div class="foot-right">&copy; 2026 WIM Services Limited. All rights reserved.</div>
+    </footer>
+ 
+<!-- ══ LIGHTBOX ════════════════════════════════════ -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-prev" onclick="lightboxNav(-1)">‹</button>
+    <button class="lightbox-next" onclick="lightboxNav(1)">›</button>
+    <img id="lightboxImg" src="" alt=""/>
+    <div class="lightbox-caption">
+      <h4 id="lightboxTitle"></h4>
+      <p id="lightboxCat"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+   // ── MOBILE NAV ───────────────────────────────────────
+function toggleMobile(){
+  const m = document.getElementById('mobileMenu');
+  const h = document.getElementById('hamburger');
+  m.classList.toggle('open');
+  h.classList.toggle('open');
+}
+ 
+// ── SCROLL REVEAL ────────────────────────────────────
+function triggerReveal(){
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('vis'); });
+  },{threshold:0.1});
+  document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el=>{
+    el.classList.remove('vis');
+    obs.observe(el);
+  });
+}
+triggerReveal();
+ 
+// ── GALLERY FILTER ───────────────────────────────────
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.gallery-item').forEach(item=>{
+      const show = f==='all' || item.dataset.cat===f;
+      item.style.display = show ? 'block' : 'none';
+      if(show){ item.classList.remove('vis'); setTimeout(()=>item.classList.add('vis'),50); }
+    });
+  });
+});
+ 
+// ── LIGHTBOX ─────────────────────────────────────────
+let galleryItems = [];
+let lightboxIdx  = 0;
+ 
+function buildGalleryList(){
+  galleryItems = Array.from(
+    document.querySelectorAll('.gallery-item:not([style*="display: none"])')
+  );
+}
+ 
+document.querySelectorAll('.gallery-item').forEach((item,i)=>{
+  item.addEventListener('click',()=>{
+    buildGalleryList();
+    lightboxIdx = galleryItems.indexOf(item);
+    openLightbox(item);
+  });
+});
+ 
+function openLightbox(item){
+  document.getElementById('lightboxImg').src   = item.dataset.img || item.querySelector('img').src;
+  document.getElementById('lightboxTitle').textContent = item.dataset.title || '';
+  document.getElementById('lightboxCat').textContent   = item.dataset.cat   || '';
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+ 
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+ 
+function lightboxNav(dir){
+  buildGalleryList();
+  lightboxIdx = (lightboxIdx + dir + galleryItems.length) % galleryItems.length;
+  openLightbox(galleryItems[lightboxIdx]);
+}
+ 
+// close on backdrop click
+document.getElementById('lightbox').addEventListener('click',e=>{
+  if(e.target===document.getElementById('lightbox')) closeLightbox();
+});
+ 
+// keyboard nav
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('lightbox').classList.contains('open')) return;
+  if(e.key==='Escape') closeLightbox();
+  if(e.key==='ArrowRight') lightboxNav(1);
+  if(e.key==='ArrowLeft')  lightboxNav(-1);
+});
+ 
+
+</script>
     
 </body>
 </html>

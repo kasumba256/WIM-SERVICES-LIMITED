@@ -28,11 +28,9 @@ body
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
 }
 
-
 .navbar 
 {
     background-color: white;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -91,7 +89,7 @@ body
     background-color: #1285b6;
     border-radius: 35px 0 0 0;
 }   
-/*Hamburger Menu button */
+/* Hamburger Menu button */
 
 .hamburger 
 {
@@ -105,8 +103,6 @@ body
     border: none;
     cursor: pointer;
     z-index: 1001;
-
-
 }
 .hamburger span
 {
@@ -141,20 +137,16 @@ body
 
 .nav-links-mobile li
 {
-    
     width: 100%;
-    
 }
 .nav-links-mobile a
 {
     width: 100%;
- 
 }
 
  #milestones 
  {
     padding: 100px 0 80px;
-    
   }
  
 
@@ -475,26 +467,6 @@ body
   {
     .clients-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   }
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
-
-
-
 
 
 /* Responsive styles */

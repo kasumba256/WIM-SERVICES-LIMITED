@@ -166,6 +166,26 @@ body
     background: #f0efea;
     color: black
 }
+
+/* ══════════════════════════════════════
+   STICKY HEADER — only change from original
+══════════════════════════════════════ */
+.sticky-header
+{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    transition: box-shadow 0.3s ease;
+}
+.sticky-header.scrolled
+{
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+}
+
+
+
+
 .navbar 
 {
     background-color: white;
