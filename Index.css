@@ -1,3 +1,8 @@
+:root 
+{
+    --gold: #f4a810;
+    --white: #ffffff;
+}
 *
 {
     margin: 0;
@@ -14,9 +19,11 @@ body
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ══════════════════════════════════════
+/* 
+══════════════════════════════════════
    STICKY HEADER — only change from original
-══════════════════════════════════════ */
+══════════════════════════════════════ 
+*/
 .sticky-header
 {
     position: sticky;
@@ -97,6 +104,111 @@ nav a:hover
     background-color: #1285b6;
     border-radius: 35px 0 0 0;
 }
+
+/* ══════════════════════════════════════════════
+   BROCHURE BUTTON — DESKTOP NAV
+   Sits as the last item in .nav-links.
+   Uses a pill shape with the brand gold colour
+   so it stands apart from plain text links.
+══════════════════════════════════════════════ */
+.brochure-item 
+{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    /* Small left separator to visually group it as a CTA */
+    margin-left: 8px;
+    padding-left: 16px;
+    border-left: 1px solid rgba(0, 128, 184, 0.18);
+}
+ 
+.brochure-btn 
+{
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 18px !important;   /* override .nav-links li a padding */
+    height: auto !important;         /* override li height constraint */
+    background: linear-gradient(135deg, #F4A810 0%, #e09208 100%);
+    color: #1A1000 !important;       /* dark text on gold — readable */
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 10px rgba(244, 168, 16, 0.28);
+    transition: background 0.22s ease, transform 0.18s ease,
+                box-shadow 0.22s ease, border-color 0.22s ease;
+    white-space: nowrap;
+}
+ 
+.brochure-btn:hover 
+{
+    background: linear-gradient(135deg, #ffb820 0%, #F4A810 100%) !important;
+    border-color: #F4A810;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 168, 16, 0.38);
+    /* Override the default nav a:hover blue background */
+    border-radius: 20px !important;
+    color: #1A1000 !important;
+}
+ 
+.brochure-btn:active 
+{
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(244, 168, 16, 0.25);
+}
+ 
+.brochure-icon 
+{
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+ 
+/* ══════════════════════════════════════════════
+   BROCHURE BUTTON — MOBILE DRAWER
+   Full-width, more prominent, at the bottom of
+   the drawer list with a top margin for separation.
+══════════════════════════════════════════════ */
+.brochure-item-mobile 
+{
+    width: 100%;
+    height: auto !important;         /* override fixed 50px li height */
+    margin-top: 12px;
+    padding: 0 16px 20px;
+}
+ 
+.brochure-btn-mobile 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #F4A810 0%, #e09208 100%);
+    color: #1A1000 !important;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow: 0 3px 12px rgba(244, 168, 16, 0.3);
+    transition: background 0.22s ease, transform 0.18s ease, box-shadow 0.22s ease;
+}
+ 
+.brochure-btn-mobile:hover 
+{
+    background: linear-gradient(135deg, #ffb820 0%, #F4A810 100%) !important;
+    color: #1A1000 !important;
+    border-radius: 10px !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(244, 168, 16, 0.38);
+}
+
 
 /* Hamburger menu button */
 .hamburger 
