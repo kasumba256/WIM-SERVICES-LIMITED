@@ -1,3 +1,16 @@
+:root 
+{
+    --text-dark:  #1a1a2e;
+    --text-body:  #374151;
+    --text-muted: #6b7280;
+    --blue:       #0080b8;
+    --blue-dark:  #053144;
+    --gold:       #F4A810;
+    --bg-light:   #F5F5F0;
+}
+ 
+
+
 *
 {
     margin: 0;
@@ -12,6 +25,7 @@ body
     background-position: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
+    overflow-x: hidden;
 }
 
 /* ══════════════════════════════════════
@@ -42,15 +56,18 @@ body
     padding: 0 24px;
 }
 
-.navbar .logo {
+.navbar .logo 
+{
     display: flex;
     align-items: center;
     font-size: 1.5rem;
     font-weight: bold;
     gap: 12px;
+    flex-shrink: 0;
 }
 
-.logo img {
+.logo img 
+{
     width: 58px;
     height: auto;
     max-height: 58px;
@@ -62,24 +79,29 @@ body
     align-items: center;
     font-size: 1.2rem;
     font-weight: 500;
+    white-space: nowrap;
 }
 .navbar .nav-links,
-.navbar .nav-links-mobile {
+.navbar .nav-links-mobile 
+{
     display: flex;
     list-style: none;
     gap: 10px;
     justify-content: flex-end;
     align-items: center;
     margin: 0;
+    padding: 0;
 }
 
 .nav-links li,
-.nav-links-mobile li {
+.nav-links-mobile li 
+{
     height: 50px;
 }
 
 .nav-links li a,
-.nav-links-mobile li a {
+.nav-links-mobile li a 
+{
     display: flex;
     height: 100%;
     padding: 0 30px;
@@ -99,6 +121,113 @@ nav a:hover
     border-radius: 35px 0 0 0;
 }
 
+/* ══════════════════════════════════════════════
+   BROCHURE BUTTON — DESKTOP NAV
+   Gold pill CTA at the far right of the nav bar,
+   separated by a subtle vertical rule.
+   Matches the style on index.html exactly.
+══════════════════════════════════════════════ */
+
+.brochure-item 
+{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+    padding-left: 16px;
+    border-left: 1px solid rgba(0, 128, 184, 0.18);
+}
+ 
+.brochure-btn 
+{
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 18px !important;
+    height: auto !important;
+    background: linear-gradient(135deg, #F4A810 0%, #e09208 100%);
+    color: #1A1000 !important;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 10px rgba(244, 168, 16, 0.28);
+    transition: background 0.22s ease, transform 0.18s ease,
+                box-shadow 0.22s ease, border-color 0.22s ease;
+    white-space: nowrap;
+}
+.brochure-btn:hover 
+{
+    background: linear-gradient(135deg, #ffb820 0%, #F4A810 100%) !important;
+    border-color: #F4A810;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 168, 16, 0.4);
+    border-radius: 20px !important;
+    color: #1A1000 !important;
+}
+.brochure-btn:active 
+{
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(244, 168, 16, 0.25);
+}
+.brochure-icon 
+{
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════
+   BROCHURE BUTTON — MOBILE DRAWER
+   Full-width prominent button at the bottom of
+   the side drawer with clear top separation.
+══════════════════════════════════════════════ */
+.brochure-item-mobile {
+    width: 100%;
+    height: auto !important;
+    margin-top: 12px;
+    padding: 0 16px 24px;
+}
+ 
+.brochure-btn-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #F4A810 0%, #e09208 100%);
+    color: #1A1000 !important;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow: 0 3px 12px rgba(244, 168, 16, 0.3);
+    transition: background 0.22s ease, transform 0.18s ease, box-shadow 0.22s ease;
+}
+ 
+.brochure-btn-mobile:hover {
+    background: linear-gradient(135deg, #ffb820 0%, #F4A810 100%) !important;
+    color: #1A1000 !important;
+    border-radius: 10px !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(244, 168, 16, 0.4);
+}
+ 
+
+/* ══════════════════════════════════════════════
+   HAMBURGER BUTTON
+══════════════════════════════════════════════ */
+ 
+ 
+ 
+ 
+
+
 /* Hamburger menu button */
 .hamburger 
 {
@@ -112,6 +241,7 @@ nav a:hover
     border: none;
     cursor: pointer;
     z-index: 1001;
+    flex-shrink: 0;
 }
 
 .hamburger span 
@@ -121,7 +251,7 @@ nav a:hover
     background-color: #0080b8;
     margin: 4px 0;
     border-radius: 2px;
-    transition: 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-links-mobile
@@ -139,6 +269,9 @@ nav a:hover
     align-items: flex-start;
     justify-content: flex-start;
     transition: right 0.3s ease;
+    overflow-y: auto;
+    padding-top:70px;
+     /* clears the sticky header height (~66px) */
 }
 
 .nav-links-mobile.active
@@ -162,7 +295,7 @@ nav a:hover
 /* ── ABOUT SECTION ── */
   #about 
   {
-    background-color: #F5F5F0;
+     background-color: var(--bg-light);
     padding: 96px 80px 80px;
   }
  
@@ -255,8 +388,6 @@ nav a:hover
   }
  
 
-  
- 
   .mv-text 
   {
     font-size: 15px;
@@ -343,7 +474,7 @@ nav a:hover
   /* ── STATS STRIP ── */
   #stats 
   {
-    background: #053144;
+     background: var(--blue-dark);
     padding: 72px 80px;
   }
  
@@ -391,57 +522,47 @@ nav a:hover
  
   
   /* ── RESPONSIVE ── */
-  @media (max-width: 960px) 
-  {
+ /* Tablet — 769px to 960px */
+@media (max-width: 960px)
+{
     #about { padding: 72px 32px; }
-    .about-grid { grid-template-columns: 1fr; gap: 56px; }
+    .about-grid { grid-template-columns: 1fr; gap: 48px; }
     #stats { padding: 56px 32px; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
-    .stat-item { border-right: none; }
-  }
+    /* FIX: keep stats in a row on tablet, 3 across still fits */
+    .stats-grid { gap: 24px; }
+    .stat-item { border-right: 1px solid rgba(255,255,255,0.08); padding: 0 12px; }
+    .stat-item:last-child { border-right: none; }
+}
  
-  @media (max-width: 520px) 
-  {
+/* Mobile — show hamburger, hide desktop nav */
+@media (max-width: 900px)
+{
+    .hamburger { display: flex; }
+    .navbar .nav-links { display: none; }
+    /* Tighten logo on narrow screens */
+    .logo span { font-size: 0.95rem; }
+    .logo img  { width: 44px; }
+    .navbar    { padding: 0 14px; }
+}
+ 
+/* Desktop — hide hamburger and mobile drawer */
+@media (min-width: 901px)
+{
+    .hamburger { display: none; }
+    .navbar .nav-links-mobile { display: none !important; }
+}
+ 
+/* Small phones */
+@media (max-width: 520px)
+{
     .mv-grid { grid-template-columns: 1fr; }
-    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stats-grid { grid-template-columns: 1fr; gap: 32px; }
+    .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0 0 28px; }
+    .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
     .stat-num { font-size: 40px; }
-  }
+    #about { padding: 56px 20px; }
+    #stats { padding: 48px 20px; }
+    .about-title { font-size: 26px; }
+    .value-card { padding: 16px; gap: 14px; }
+}
  
-  
- 
-  
-
-
-/* Responsive styles */
-@media (max-width: 768px) 
-{
-    .nav-links {
-        display: none;
-    }
-    .hamburger {
-        display: flex;
-    }
-}
-
-
-/* Show hamburger on mobile */
-@media (max-width: 900px) 
-{
-    .hamburger {
-        display: flex;
-    }
-    .navbar .nav-links {
-        display: none;
-    }
-}
-
-/* Desktop only */
-@media (min-width: 901px) 
-{
-    .hamburger {
-        display: none;
-    }
-    .navbar .nav-links-mobile {
-        display: none;
-    }
-}

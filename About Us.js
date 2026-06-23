@@ -1,69 +1,44 @@
-// Hamburger menu toggle
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const mobileNav = document.querySelector('.nav-links-mobile');
-    
-    hamburgerBtn.addEventListener('click', function() {
-      mobileNav.classList.toggle('active');
-    });
-    
-    // Close menu when a link is clicked
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('active');
-      });
-    });
-
-    // Intersection Observer — scroll reveal
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
+ /* ── Sticky header scroll shadow ── */
+        const stickyHeader = document.getElementById('stickyHeader');
+        window.addEventListener('scroll', () => {
+            stickyHeader.classList.toggle('scrolled', window.scrollY > 10);
+        }, { passive: true });
  
-  document.querySelectorAll('.reveal, .reveal-right, .value-card, .stat-item').forEach(el => {
-    observer.observe(el);
-  });
+        /* ── Hamburger / mobile drawer ──
+           Self-contained so it works even if "About Us.js" fails to load
+           (filenames with spaces can fail on some servers).            */
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileNav    = document.getElementById('mobileNav');
  
-  // Counter animation for stats
-  function animateCounter(el, target, suffix = '', duration = 1800) {
-    let start = 0;
-    const isUGX = suffix.includes('UGX');
-    const step = target / (duration / 16);
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) {
-        start = target;
-        clearInterval(timer);
-      }
-      el.textContent = isUGX
-        ? 'UGX ' + Math.floor(start) + 'B+'
-        : Math.floor(start) + suffix;
-    }, 16);
-  }
+        function openDrawer() {
+            mobileNav.classList.add('active');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+            hamburgerBtn.setAttribute('aria-label', 'Close navigation menu');
+            const s = hamburgerBtn.querySelectorAll('span');
+            s[0].style.transform = 'translateY(11px) rotate(45deg)';
+            s[1].style.opacity   = '0';
+            s[2].style.transform = 'translateY(-11px) rotate(-45deg)';
+        }
+        function closeDrawer() {
+            mobileNav.classList.remove('active');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            hamburgerBtn.setAttribute('aria-label', 'Open navigation menu');
+            const s = hamburgerBtn.querySelectorAll('span');
+            s[0].style.transform = '';
+            s[1].style.opacity   = '';
+            s[2].style.transform = '';
+        }
  
-  // Trigger counters when stats section enters view
-  const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const nums = entry.target.querySelectorAll('.stat-num');
-        const data = [
-          { el: nums[0], val: 12,  suffix: '+' },
-          { el: nums[1], val: 150, suffix: '+' },
-          { el: nums[2], val: 25,  suffix: '+' },
-          { el: nums[3], val: 15,  suffix: '', ugx: true }
-        ];
-        data.forEach(d => {
-          if (d.ugx) {
-            animateCounter(d.el, d.val, 'UGX', 1800);
-          } else {
-            animateCounter(d.el, d.val, d.suffix, 1600);
-          }
+        hamburgerBtn.addEventListener('click', () => {
+            mobileNav.classList.contains('active') ? closeDrawer() : openDrawer();
         });
-        statsObserver.disconnect();
-      }
-    });
-  }, { threshold: 0.3 });
  
-  statsObserver.observe(document.getElementById('stats'));
+        /* Close drawer when any link is tapped */
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeDrawer);
+        });
+ 
+        /* Close drawer if viewport grows to desktop width */
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 901) closeDrawer();
+        });

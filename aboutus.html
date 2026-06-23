@@ -11,7 +11,7 @@
 </head>
 <body>
 <!-- Reuse the same header from Index.html for consistency -->
-    <header class="sticky-header">
+    <header class="sticky-header" id="stickyHeader">
         <nav class="navbar">
             <div class="logo">
                 <img src="./ASSETS/IMAGES/wim logo-2.png" alt="WIM Services Limited Logo">
@@ -20,7 +20,9 @@
             </div>
             
             <!-- Hamburger menu button for mobile -->
-            <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu">
+            <button class="hamburger" id="hamburgerBtn"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -34,7 +36,32 @@
                 <li><a href="./milestone.html#clients">Clients</a></li>
                 <li><a href="./contactus.html">Contact Us</a></li>
 
+                  <!--
+                    BROCHURE BUTTON — desktop nav.
+                    Update href to your actual PDF path, e.g.
+                    href="./ASSETS/DOCS/WIM-Brochure.pdf"
+                    The `download` attribute saves the file instead of opening it.
+                -->
+                <li class="brochure-item">
+                    <a href="./ASSETS/DOCS/WIM-Brochure.pdf"
+                       download="WIM-Services-Brochure.pdf"
+                       class="brochure-btn"
+                       aria-label="Download WIM company brochure PDF">
+                        <svg class="brochure-icon" viewBox="0 0 20 20"
+                             fill="currentColor" aria-hidden="true">
+                            <path d="M10 2a1 1 0 00-1 1v7.586L7.707 9.293a1 1 0
+                                     10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0
+                                     00-1.414-1.414L11 10.586V3a1 1 0 00-1-1z"/>
+                            <path d="M3 14a1 1 0 011 1v1h12v-1a1 1 0 112 0v1a2
+                                     2 0 01-2 2H4a2 2 0 01-2-2v-1a1 1 0 011-1z"/>
+                        </svg>
+                        Brochure
+                    </a>
+                </li>
+
             </ul>
+
+            
 
             <!-- Mobile Navigation Links -->
             <ul class="nav-links-mobile">
@@ -44,6 +71,25 @@
                 <li><a href="./milestone.html">Milestones</a></li>
                 <li><a href="./milestone.html#clinets">Clients</a></li>
                 <li><a href="./contactus.html">Contact Us</a></li>
+                
+                 <!-- Brochure button — mobile drawer -->
+                <li class="brochure-item-mobile">
+                    <a href="./ASSETS/DOCS/WIM-Brochure.pdf"
+                       download="WIM-Services-Brochure.pdf"
+                       class="brochure-btn-mobile"
+                       aria-label="Download WIM company brochure PDF">
+                        <svg class="brochure-icon" viewBox="0 0 20 20"
+                             fill="currentColor" aria-hidden="true">
+                            <path d="M10 2a1 1 0 00-1 1v7.586L7.707 9.293a1 1 0
+                                     10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0
+                                     00-1.414-1.414L11 10.586V3a1 1 0 00-1-1z"/>
+                            <path d="M3 14a1 1 0 011 1v1h12v-1a1 1 0 112 0v1a2
+                                     2 0 01-2 2H4a2 2 0 01-2-2v-1a1 1 0 011-1z"/>
+                        </svg>
+                        Download Brochure
+                    </a>
+                </li>
+
             </ul>
 
         </nav>
@@ -164,7 +210,7 @@
     </div>
     <div class="stat-item reveal">
       <div class="stat-num">150+</div>
-      <div class="stat-label">Kilometres of Roads</div>
+      <div class="stat-label">Kilometers of Roads</div>
     </div>
     <div class="stat-item reveal">
       <div class="stat-num">25+</div>
