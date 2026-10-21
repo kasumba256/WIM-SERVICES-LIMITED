@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WIM  Civil & Building Engineers-Services</title>
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="stylesheet" href="./services.css">
     <meta name="description" content="WIM Services Limited is a ugandan multi-displinary engineering company 
     specializing in Road construction and water Engineering .">
@@ -40,7 +41,7 @@
                 <li><a href="./aboutus.html">About Us</a></li>
                 <li><a href="./services.html">Services</a></li>
                 <li><a href="./milestone.html">Milestones</a></li>
-                <li><a href="./milestone.html#clinets">Clients</a></li>
+                <li><a href="./milestone.html#clients">Clients</a></li>
                 <li><a href="./contactus.html">Contact Us</a></li>
 
             </ul>
@@ -147,29 +148,47 @@
  
  
     </section>
-      <script>
-// Hamburger menu toggle
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const mobileNav = document.querySelector('.nav-links-mobile');
-    
-    hamburgerBtn.addEventListener('click', function() {
-      mobileNav.classList.toggle('active');
-    });
+     <script>
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileNav = document.querySelector('.nav-links-mobile');
+        const header = document.querySelector('.sticky-header');
 
+      // Hamburger menu toggle
+      hamburgerBtn.addEventListener
+      ('click', function () 
+       {
+        const isOpen = mobileNav.classList.toggle('active');
+        hamburgerBtn.setAttribute('aria-expanded', isOpen);
+       }
+      );
 
+      // 🟢 NEW: close the menu when a link is tapped
+      mobileNav.querySelectorAll('a').forEach(function (a) 
+      {
+        a.addEventListener('click', function () 
+         {
+           mobileNav.classList.remove('active');
+           hamburgerBtn.setAttribute('aria-expanded', 'false');
+         });
+      });
 
-        // ── Intersection Observer for scroll reveal ──
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-           if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.12 });
- 
-  document.querySelectorAll(
-    '.reveal-left, .reveal-right, .reveal-up'
-  ).forEach(el => observer.observe(el));
-</script>
+      // 🟢 NEW: header shadow while scrolling
+      window.addEventListener('scroll', function () {
+        header.classList.toggle('scrolled', window.scrollY > 10);
+      });
+
+      // Scroll reveal (your original code)
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll(
+        '.reveal-left, .reveal-right, .reveal-up'
+      ).forEach(el => observer.observe(el));
+     </script>
  
 </html>
